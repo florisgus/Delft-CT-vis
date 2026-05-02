@@ -1,0 +1,14 @@
+[project]
+name = "delft-ct-vis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pyvista>=0.47.3",
+    "simpleitk>=2.5.4",
+    "tqdm>=4.67.3",
+]
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
