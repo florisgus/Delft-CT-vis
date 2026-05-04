@@ -14,10 +14,12 @@ if downsample_factor > 1:
     print(f"Downsampled volume by factor {downsample_factor}")
 
 
-grid = wrap(Volume)
-grid = grid.extract_values(ranges=[1e3, np.inf], include_cells=True)
-grid = grid.scale([5.0, 1, 1], inplace=False)
+# grid = wrap(Volume)
+# grid = grid.scale([5.0, 1, 1], inplace=False)
+
+grid = MakeGrid(Volume=Volume, scale=[5.0, 1, 1])
 # edges = grid.extract_feature_edges(progress_bar=True)
+grid = grid.extract_values(ranges=[1e3, np.inf], include_cells=True)
 # edges.plot()
 plt = Plotter()
 # plt.add_mesh(mesh=edges, cmap="bone")
